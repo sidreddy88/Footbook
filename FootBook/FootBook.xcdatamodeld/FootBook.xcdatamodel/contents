@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Comments" representedClassName="Comments" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="friend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="comments" inverseEntity="Friend" syncable="YES"/>
+    </entity>
+    <entity name="Friend" representedClassName="Friend">
+        <attribute name="feet" optional="YES" attributeType="Integer 32" defaultValueString="0" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isPhtooAlreadyAdded" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shoesize" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="comments" toMany="YES" deletionRule="Nullify" destinationEntity="Comments" inverseName="friend" inverseEntity="Comments" syncable="YES"/>
+        <relationship name="parties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Party" inverseName="guests" inverseEntity="Party" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="Party" representedClassName="Party" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="theme" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="guests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="parties" inverseEntity="Friend" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Comments" positionX="0" positionY="0" width="128" height="88"/>
+        <element name="Friend" positionX="-279" positionY="0" width="128" height="148"/>
+        <element name="Party" positionX="-20" positionY="159" width="128" height="103"/>
+    </elements>
+</model>
